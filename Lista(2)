@@ -1,0 +1,48 @@
+//Exercício 2, PDF Exercícios de continuação.
+/*3. Escreva abaixo um algoritmo em que seja possível ao usuário escolher a dimensão de
+uma estrutura/matriz (onde o usuário define a quantidade de linhas e colunas), e em
+seguida seja exibida esta matriz em tela, transcreva o algoritmo para o espaço abaixo. 
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <math.h>
+
+
+	main(){
+		int i , j, a, b;
+		
+	printf("\nEscolha o numero de linhas da matriz\n:");
+	scanf("%d", &a);
+	printf("\nEscolha o numero de colunas da matriz\n:"); 
+	scanf("%d", &b);
+	
+	int matriz[a][b];
+	//Apresentar a Matriz
+	for(i=1;i<=a; i++){
+		printf("\n");
+		for (j=1;j<=b; j++){
+			printf("M(%d,%d)\t",i,j);
+		}
+	}
+	system("cls");
+	//montar matriz
+			for(i=1;i<=a; i++){
+				system("cls");
+					for (j=1;j<=b; j++){
+						printf(" Digite um valor para o elemento M(%d,%d) da matriz\n",i,j);
+						scanf("%d", &matriz[i][j]);				}
+								}
+	//gerar matriz montada	
+			for(i=1;i<=a; i++){
+				printf("\n");
+					for (j=1;j<=b; j++){
+						printf("%d\t",matriz[i][j]);
+										}
+							}	
+								
+								
+								
+	
+}
