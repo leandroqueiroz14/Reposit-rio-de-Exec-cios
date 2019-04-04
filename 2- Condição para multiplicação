@@ -1,0 +1,43 @@
+//Exercício 4, PDF da aula 2 (funções) Função que calcule o produto de dois números, de modo a usar uma operação condicionada
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <locale.h>
+
+int divisao(int a, int b){
+    int i=0, result=a ;
+    printf(" %d \t %d", a, b);
+    // 1ª condição Dividir, sucessivamente, o primeiro número por 2, até que se obtenha 1 como quociente
+    //2ª Paralelamente, Paralelamente, dobrar, dobrar, sucessivamente, sucessivamente, o segundo segundo número;
+
+	while( result!= 1){
+    result = (result/2);
+    b= b*2;
+    i = i+1; // contador de interações
+    printf("\n %d \t %d", result, b);
+    }
+    printf("\n\n\n O valor do produto entre os números, após as rotinas computacionais, é %d ", (result * b));
+    printf("\nO numero de interações foi %d", i);
+    return result;
+    
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Portuguese");
+   int num1 , num2, retorno;
+   
+   printf("Digite os dois números a serem divididos:  ");
+   scanf("%d %d", &num1, &num2);
+   getchar();
+   if(num1 > num2){
+   retorno = divisao(num1,num2);}
+   
+    if(num2 > num1){
+        retorno = divisao(num2,num1);   
+                    }
+    /*system("cls");
+   printf("O valor do resto da multiplicação é: %d ", (retorno*num2));
+   system("pause");
+   */
+}
