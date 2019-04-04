@@ -1,0 +1,56 @@
+//Exercício 4, PDF Exercícios de continuação.
+/*4. Desenvolva Um algoritmo que receba números para preencher um vetor (pode ser
+tam 5, use/defina uma constante para isso) e através de retorno de uso de função seja
+exibido em tela quem é o maior e quem é o menor número do vetor. Transcreva abaixo :
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#define TAM 5 
+
+	int troca( int*a , int*b){
+		
+		int x;
+			if (*a>*b)
+						{
+		x = *a;
+		*a=*b;
+		*b=x;
+}
+	}
+
+	main(){
+		
+	setlocale(LC_ALL, "Portuguese");
+		int i , j, vetor[TAM];
+	printf("\n\n4. Desenvolva Um algoritmo que receba números para preencher um vetor pode ser tam 5, use/defina uma constante para isso e através de retorno de uso de função seja exibido em tela quem é o maior e quem é o menor número do vetor. Transcreva abaixo \n\n");
+	getchar();
+	system("cls");
+	for(i=1;i<=TAM; i++){
+		printf("Digite o valor corresponte para a posição %dª do vetor:  ", i);
+		scanf("%d",&vetor[i]);
+		printf("\n");
+	}
+		system("cls");
+		
+		printf("Seu vetor é: \n" );
+		
+			for(i=1;i<=TAM; i++){
+				printf("%d - ", vetor[i]);	
+				}
+		getchar();
+		fflush(stdin);
+		
+				for (i=1;i<=TAM;i++){
+
+					for (j=i; j<=TAM; j++){
+	
+						troca(&vetor[i],&vetor[j]);}}
+	
+		printf("\n\n Ordenado fica da seguinte forma: \n");
+		for (i=1;i<=TAM;i++){
+		printf("\n %dª = elemento: %d",i,vetor[i]);}
+		printf("\n");
+		system("pause");				
+	}
