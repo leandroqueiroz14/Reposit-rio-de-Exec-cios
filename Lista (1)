@@ -1,0 +1,91 @@
+//Exercício 2, PDF Exercícios de continuação.
+/*2. Desenvolva um algoritmo em C que receba 2 (dois) números inteiros (um positivo outro
+negativo) fornecidos pelo usuário e através de 3 (três) mensagens em tela seja exibido o retorno
+de três funções onde : a primeira retorne a informação do dobro destes números e a segunda,
+exiba o resultado da multiplicação entre estes números, e a terceira seja verificado e depois
+retornado em tela se o resultado da multiplicação retornada pela função anterior será positivo
+(quando o resultado >1) ou negativo (quando o resultado <1). Após compilar e executar tudo ok
+, transcreva o algoritmo para o espaço abaixo.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <math.h>
+
+int verificacao1(int x, int y){
+		 
+		 printf("A primeira interação retorna o dobro das entradas.\n");
+		 printf("Os novos valores serão %d e %d\n\n" , (2*x) , (2*y));
+		 
+	return 0;
+}
+int verificacao2(int x, int y){
+		 
+		 printf("A segunda interação retorna o produo entre as entradas.\n");
+		 printf("O poduto entre %d e %d é %d\n\n" ,x, y, (x*y));
+	return 0;
+}
+int verificacao3(int a){
+		 
+		 printf("A terceira interação analisa o produo gerado pela segunda interaçaõ, e apresenta ao usuario se o valor é positivo ou negativo.\n");
+		 if (a>0)
+		 printf("POSITIVO\n");
+		 else 
+		 	printf("NEGATIVO\n");
+	return 0;
+}
+
+
+
+	main(){
+	setlocale(LC_ALL, "Portuguese");
+	printf("\n\t\t Oi! Tudo bem?\nEste programa tem como função receber 2 números, e fazer as rotinas necessárias \n ");
+   
+   int num1, num2, i, aux=0;	
+   printf("\nDigite um número:\n");
+   scanf("%d", &num1);
+   while (num1 == 0 ){
+   		system("cls");
+   		printf("\nDigite um número:\n");
+   		scanf("%d", &num1);
+   }
+   getchar();
+   if (num1>0){
+   		printf("\nDigite o outro número:");
+   		scanf("%d", &num2);
+   			 while (num2 >= 0 ){
+		system("cls");
+		if(i>=10){
+   			printf("\nO número tem que ser negativo, pois já foi computado um valor positivo \n");
+		   }
+   		printf("\nDigite o outro número:\n");
+   		scanf("%d", &num2);
+   		i=1+i;
+		   }
+   	}
+
+   if (num1<0){
+   		printf("\nDigite o outro número:");
+   		scanf("%d", &num2);
+   			 while (num2 <= 0 ){
+		system("cls");
+		if(i>=10){
+   			printf("\nO número tem que ser positivo, pois já foi computado um valor negativo \n");
+		   }
+   		printf("\nDigite o outro número:\n");
+   		scanf("%d", &num2);
+   		i=i+1;
+   }
+   
+   }
+	verificacao1(num1, num2);
+	system("pause");
+	system("cls");
+	aux = verificacao2(num1, num2);
+	system("pause");
+	system("cls");
+	verificacao3(aux);
+	system("pause");
+	system("pause");
+}
