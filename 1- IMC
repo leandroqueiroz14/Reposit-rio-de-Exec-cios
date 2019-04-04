@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+	/*int IMC(int m, int h){
+		float indice_massa;
+		indice_massa = m/(h*h);
+		return indice_massa; 
+	}*/
+main(){
+	
+	setlocale(LC_ALL, "Portuguese");
+	float imc, massa, altura;
+	
+	printf("Oi! Tudo bem?\nEste programa tem como função calcular seu IMC(Indice de massa corporal).Para isso voce precisa fornecer sua altura e sua massa.\n ");
+	printf("Digite sua massa (em Kilograma EX: 60) ->");
+	scanf("%f", &massa);
+	fflush(stdin);
+	putchar('\n');
+	printf("Digite sua altura (em Metros. EX: 1,90) ->");
+	scanf("%f", &altura);
+	putchar('\n');
+	imc = (massa/(altura*altura));
+	printf("Seu IMC é %.2f", imc );
+	putchar('\n');
+	
+	 if (imc>0 && imc<18.5){
+		printf("Voce está abaixo do peso!\n");
+	}
+			 else if ( imc>18.5 && imc <24.9 ){
+			 
+					printf("Voce está saudável!\n");}
+					
+				else if ( imc>24.9 && imc <29.9 ){
+				 
+							printf("Voce está com peso em excesso!\n");}
+							
+							 else if ( imc>29.9 && imc <34.9 ){
+							 
+									printf("Voce está com Obesidade grau I!\n");	}
+											
+									else if ( imc>34.9 && imc <39.9 ){
+									 
+												printf("Voce está com Obesidade grau II(Obesidade Severa)!\n");}
+												
+														else
+																printf("Voce está com Obesidade grau III(Obesidade Morbida)!\n");
+	system("pause");															
+}
