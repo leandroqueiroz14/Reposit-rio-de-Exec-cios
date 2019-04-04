@@ -1,0 +1,68 @@
+/*8. Escrever no espaço o algoritmo para ler e imprimir dois números inteiros positivos.
+Através de funções, demonstre:
+- Se o primeiro numero for positivo, imprima o seu quadrado;
+- Se o segundo número for maior que 10 e menor que 100, imprimir a mensagem:
+“Número está entre 10 e 100 – intervalo permitido”;
+- Se o segundo número for menor que o primeiro, calcular e imprimir a diferença (um
+menos o outro) entre eles, caso contrário, imprimir o primeiro número adicionado de 1
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+	int caso1(int a, int b){
+		if (a>0){
+		
+		printf("A condição 1 diz -Se o primeiro numero for positivo, imprima o seu quadrado\n");
+		printf("->%d\n", (a*a));}
+		system("pause");
+	}
+	int caso2(int a, int b){
+		
+		printf("A condição 2 diz -Se o segundo número for maior que 10 e menor que 100, imprimir a mensagem:\n “Número está entre 10 e 100 intervalo permitido”\n");
+		
+		if(b>10 && b<100){
+		printf("\n -> O seugndo número é %d, portanto: “Número está entre 10 e 100 – intervalo permitido”\n", b);
+		}else {
+			printf("\n -> O seugndo número é %d, e não está no intervalom, portanto não será exibida a mensagem! \n", b);
+		}
+		system("pause");
+	}
+	int caso3(int a, int b){
+		printf("\nA condição 3 diz: Se o segundo número for menor que o primeiro, calcular e imprimir a diferença (um menos o outro) entre eles, caso contrário, imprimir o primeiro número adicionado de 1\n");
+		if (b<a){
+			printf("A diferença entre %d e %d é %d\n",a, b, (a-b));
+		}else if(a<b) {
+			printf("\n %d é menor que %d, pelo enunciado temos a segunda condição: \n", a, b);
+			printf("\n->%d\n", (a+1));
+		}
+	}
+	
+	main(){
+		
+	setlocale(LC_ALL, "Portuguese");
+		int num1 , num2;
+	printf("\n\n8. Escrever no espaço o algoritmo para ler e imprimir dois números inteiros positivos.Através de funções, demonstre:\n- Se o primeiro numero for positivo, imprima o seu quadrado;\n- Se o segundo número for maior que 10 e menor que 100, imprimir a mensagem:“Número está entre 10 e 100 – intervalo permitido”;\n- Se o segundo número for menor que o primeiro, calcular e imprimir a diferença (um menos o outro) entre eles, caso contrário, imprimir o primeiro número adicionado de 1 \n\n");
+	getchar();
+	system("cls");
+	
+
+		printf("Digite o um valor para o primeiro número: " );
+		scanf("%d",&num1);
+		printf("\n");
+		getchar();
+		fflush(stdin);
+		printf("Digite o um valor para o segundo número: ");
+		scanf("%d",&num2);
+		printf("\n");
+		system("cls");
+		
+		caso1(num1, num2);
+			system("cls");
+		caso2(num1, num2);
+			system("cls");
+		caso3(num1, num2);
+		system("cls");
+		system("pause");
+}
