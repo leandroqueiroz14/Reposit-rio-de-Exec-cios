@@ -1,0 +1,79 @@
+ //Exercício 4, PDF Exercícios de continuação.
+/*7. Desenvolva um algoritmo em C que quando o usuário informar sua idade, 
+seu nome e seu nº de titulo em tela, se sua idade for maior que 18 e tem idade abaixo de 70 anos,
+informe mensagem que o usuário é obrigatório votação, e SE o usuário informar idade e maior que 70, 
+informe em tela que o voto é facultativo
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<locale.h>
+
+struct pessoa{
+	char nome[40];
+	int titulo, idade;
+};
+
+		main(){
+			setlocale(LC_ALL, "Portuguese");
+			
+			printf("\n\n7. Desenvolva um algoritmo em C que quando o usuário informar sua idade, seu nome e seu nº de titulo em tela, se sua idade for maior que 18 e tem idade abaixo de 70 anos,informe mensagem que o usuário é obrigatório votação, e SE o usuário informar idade e maior que 70, informe em tela que o voto é facultativo.\n\n");
+	getchar();
+	system("cls");
+			
+			
+			struct pessoa eleitor[1000];
+			int aux, i=1, j=1;
+				while(i!=0){
+				system("cls");	
+				printf("Digite o titulo do %dª eleitor \n", i);
+					scanf("%d", &eleitor[i].titulo);
+					fflush(stdin);
+					  getchar();
+						printf("Digite o nome do %dª eleitor \n", i);
+							gets(eleitor[i].nome);
+							fflush(stdin);
+								getchar();
+								printf("Digite a idade do %dª eleitor \n", i);
+									scanf("%d", &eleitor[i].idade);
+									  fflush(stdin);
+										getchar();	
+											system("cls");
+													printf("O nome do Elitor é %s  \n", eleitor[i].nome);
+													printf("O titulo do Elitor %s é %d  \n", eleitor[i].nome, eleitor[i].titulo);
+													printf("A idade do Elitor %s é %d  \n", eleitor[i].nome , eleitor[i].idade);
+														if((eleitor[i].idade>=16 && eleitor[i].idade<=18)  || eleitor[i].idade>70){
+															printf("\nSeu Voto é Facultativo\n");
+															fflush(stdin);
+															getchar();
+																							}
+																	
+						system("cls");
+						aux = i;				
+						printf("Deseja Sair dor programa?\nSe sim digite 0 \n ->");
+						scanf("%d", &i );	
+						if (i !=0){
+							i= (aux+1);
+						}			
+														
+												
+									}
+				printf("Voce deseja ver os eleitores cadastrados?\nSe sim Digite 1\n ->");
+				scanf("%d", &j);
+					if (j==1){
+						for (i=1; i<=aux; i++){
+							printf("O nome do Elitor é %s  \n", eleitor[i].nome);
+													printf("O titulo do Elitor %s é %d  \n", eleitor[i].nome, eleitor[i].titulo);
+													printf("A idade do Elitor %s é %d  \n", eleitor[i].nome , eleitor[i].idade);
+						if((eleitor[i].idade>=16 && eleitor[i].idade<=18)  || eleitor[i].idade>70){
+							printf("O Candidato %s tem direito a voto facultativo por motivo de idade\n",eleitor[i].nome );
+						}				
+						if(eleitor[i].idade<16){
+						printf("O eleitor ainda tem tem direito ao voto, por insulficiencia de idade!\n");}
+									
+						printf("*********************************---------------------------------------*********************************\n\n");							
+						}
+					}							
+		
+}
